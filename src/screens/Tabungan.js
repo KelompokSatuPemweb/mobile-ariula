@@ -31,19 +31,15 @@ export default function Tabungan({ keDashboard }) {
 
     const simpanData = async () => {
         if (!nama || !nominal) return Alert.alert("Error", "Isi semua field!");
-        if (parseInt(nominal) <= 0) return Alert.alert("Error", "Nominal harus lebih dari 0");
-        if (!nama || !nominal) return Alert.alert("Error", "Isi semua field!");
         
-        const baru = { id: Date.now().toString(), nama, total: nominal, status: "Berhasil" };
-        const koleksiBaru = [...dataTabungan, baru];
-        
-        try {
-        await AsyncStorage.setItem('db_tabungan', JSON.stringify(koleksiBaru));
-        setDataTabungan(koleksiBaru);
-        setNama(''); setNominal('');
-        Alert.alert("Sukses", "Tabungan tersimpan!");
-        } catch (e) { console.error(e) }
-    };
+        const baru = { 
+            id: Date.now().toString(), 
+            nama: nama, 
+            nominal: parseInt(nominal),
+            tanggal: new Date().toLocaleDateString(), 
+            status: "Berhasil" 
+        };
+    }
 
     return (
         <View style={styles.container}>

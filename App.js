@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, ActivityIndicator } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import Login from './src/screens/login';
+import Login from './src/screens/Login';
 import Dashboard from './src/screens/Dashboard';
 import Tabungan from './src/screens/Tabungan';
 import NilaiSiswa from './src/screens/NilaiSiswa';
